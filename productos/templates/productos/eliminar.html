@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar producto</title>
+    <link rel="stylesheet" href="{% static 'productos/css/estilos.css' %}">
+    <script src="{% static 'productos/js/confirmar.js' %}"></script>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="encabezado">
+            <img src="{% static 'productos/img/logo-productos.png' %}" alt="Productos">
+            <h1>Eliminar producto</h1>
+        </div>
+
+        <p>¿Seguro que deseas eliminar <strong>{{ producto.nombre }}</strong>?</p>
+
+        <form method="POST" onsubmit="confirmarEliminacion(event, '{{ producto.nombre }}')">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-eliminar">Sí, eliminar</button>
+            <a href="{% url 'productos:lista' %}" class="btn btn-editar">Cancelar</a>
+        </form>
+    </div>
+</body>
+</html>     

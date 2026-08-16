@@ -1,0 +1,311 @@
+/* =========================================================
+   ESTILOS - APP PRODUCTOS
+   Paleta: naranja / cálido (coherente con categorias)
+   Va en: productos/static/productos/css/estilos.css
+   ========================================================= */
+
+:root {
+  --naranja: #ea580c;
+  --naranja-claro: #fb923c;
+  --naranja-oscuro: #9a3412;
+  --morado: #6d28d9;
+  --fondo: #fff7ed;
+  --texto: #1e1b2e;
+  --texto-suave: #6b7280;
+  --blanco: #ffffff;
+  --borde: #fde5cc;
+  --rojo: #dc2626;
+  --sombra: 0 4px 14px rgba(234, 88, 12, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+  background: linear-gradient(160deg, var(--fondo) 0%, #ffedd5 100%);
+  color: var(--texto);
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.contenedor {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--blanco);
+  border-radius: 16px;
+  box-shadow: var(--sombra);
+  padding: 32px 36px;
+}
+
+/* ---------- Encabezado ---------- */
+.encabezado {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--borde);
+}
+
+.encabezado img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: var(--fondo);
+  padding: 8px;
+}
+
+.encabezado h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--naranja-oscuro), var(--naranja-claro));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.btn-crear {
+  background: linear-gradient(90deg, var(--naranja), var(--naranja-claro));
+  color: var(--blanco);
+  box-shadow: 0 4px 10px rgba(234, 88, 12, 0.3);
+  margin-bottom: 20px;
+}
+
+.btn-editar {
+  background: var(--fondo);
+  color: var(--naranja-oscuro);
+  border: 1px solid var(--naranja-claro);
+}
+
+.btn-eliminar {
+  background: #fef2f2;
+  color: var(--rojo);
+  border: 1px solid #fecaca;
+}
+
+.btn-eliminar:hover {
+  background: var(--rojo);
+  color: var(--blanco);
+}
+
+.enlace-productos {
+  display: inline-block;
+  margin: 0 0 20px 12px;
+  color: var(--naranja);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.enlace-productos:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Grid de tarjetas (listado de productos) ---------- */
+.contenedor > div[class^="tarjeta"],
+.grid-productos {
+  display: grid;
+}
+
+/* El listado envuelve las .tarjeta directamente; les damos grid mediante el padre */
+.contenedor {
+  --grid: none;
+}
+
+.tarjeta {
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--blanco);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  display: inline-flex;
+  flex-direction: column;
+  width: 220px;
+  vertical-align: top;
+  margin: 0 14px 14px 0;
+}
+
+.tarjeta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(234, 88, 12, 0.18);
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  background: var(--fondo);
+}
+
+.tarjeta-info {
+  padding: 14px 16px;
+}
+
+.categoria-tag {
+  display: inline-block;
+  background: var(--fondo);
+  color: var(--naranja-oscuro);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.tarjeta-info h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  color: var(--texto);
+}
+
+.precio {
+  margin: 0 0 10px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--naranja);
+}
+
+/* ---------- Tabla (por si se reutiliza) ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead {
+  background: var(--naranja-oscuro);
+}
+
+thead th {
+  color: var(--blanco);
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--borde);
+}
+
+tbody tr:hover {
+  background: var(--fondo);
+}
+
+tbody td {
+  padding: 14px 16px;
+  font-size: 15px;
+}
+
+.acciones {
+  display: flex;
+  gap: 8px;
+}
+
+/* ---------- Formulario ---------- */
+.form-grupo {
+  margin-bottom: 20px;
+}
+
+.form-grupo label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--naranja-oscuro);
+}
+
+.form-grupo input,
+.form-grupo select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  font-size: 15px;
+  color: var(--texto);
+  background: var(--fondo);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-grupo input:focus,
+.form-grupo select:focus {
+  outline: none;
+  border-color: var(--naranja-claro);
+  box-shadow: 0 0 0 3px rgba(251, 146, 60, 0.3);
+  background: var(--blanco);
+}
+
+form .btn {
+  margin-top: 6px;
+}
+
+/* Vista previa de imagen antes de guardar (JS la muestra con display:block) */
+.vista-previa {
+  display: block;
+  max-width: 180px;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid var(--naranja-claro);
+  margin-top: 10px;
+}
+
+/* ---------- Aviso ---------- */
+.aviso {
+  background: #fef2f2;
+  border-left: 4px solid var(--rojo);
+  color: #991b1b;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .contenedor {
+    padding: 22px 18px;
+  }
+
+  .encabezado h1 {
+    font-size: 21px;
+  }
+
+  .tarjeta {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .acciones {
+    flex-direction: column;
+  }
+}

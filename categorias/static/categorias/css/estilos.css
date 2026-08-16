@@ -1,0 +1,231 @@
+/* =========================================================
+   ESTILOS - APP CATEGORIAS
+   Paleta: violeta / índigo
+   Va en: categorias/static/categorias/css/estilos.css
+   ========================================================= */
+
+:root {
+  --morado: #6d28d9;
+  --morado-claro: #8b5cf6;
+  --morado-oscuro: #4c1d95;
+  --fondo: #f5f3ff;
+  --texto: #1e1b2e;
+  --texto-suave: #6b7280;
+  --blanco: #ffffff;
+  --borde: #e5e0f7;
+  --verde: #16a34a;
+  --naranja: #ea580c;
+  --rojo: #dc2626;
+  --sombra: 0 4px 14px rgba(109, 40, 217, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+  background: linear-gradient(160deg, var(--fondo) 0%, #ede9fe 100%);
+  color: var(--texto);
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.contenedor {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--blanco);
+  border-radius: 16px;
+  box-shadow: var(--sombra);
+  padding: 32px 36px;
+}
+
+/* ---------- Encabezado ---------- */
+.encabezado {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--borde);
+}
+
+.encabezado img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: var(--fondo);
+  padding: 8px;
+}
+
+.encabezado h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--morado-oscuro), var(--morado-claro));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.btn-crear {
+  background: linear-gradient(90deg, var(--morado), var(--morado-claro));
+  color: var(--blanco);
+  box-shadow: 0 4px 10px rgba(109, 40, 217, 0.3);
+  margin-bottom: 20px;
+}
+
+.btn-editar {
+  background: var(--fondo);
+  color: var(--morado-oscuro);
+  border: 1px solid var(--morado-claro);
+}
+
+.btn-eliminar {
+  background: #fef2f2;
+  color: var(--rojo);
+  border: 1px solid #fecaca;
+}
+
+.btn-eliminar:hover {
+  background: var(--rojo);
+  color: var(--blanco);
+}
+
+.enlace-productos {
+  display: inline-block;
+  margin: 0 0 20px 12px;
+  color: var(--morado);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.enlace-productos:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Tabla ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead {
+  background: var(--morado-oscuro);
+}
+
+thead th {
+  color: var(--blanco);
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--borde);
+  transition: background 0.15s ease;
+}
+
+tbody tr:hover {
+  background: var(--fondo);
+}
+
+tbody td {
+  padding: 14px 16px;
+  font-size: 15px;
+  color: var(--texto);
+}
+
+.acciones {
+  display: flex;
+  gap: 8px;
+}
+
+/* ---------- Formulario ---------- */
+.form-grupo {
+  margin-bottom: 20px;
+}
+
+.form-grupo label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--morado-oscuro);
+}
+
+.form-grupo input,
+.form-grupo select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  font-size: 15px;
+  color: var(--texto);
+  background: var(--fondo);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-grupo input:focus,
+.form-grupo select:focus {
+  outline: none;
+  border-color: var(--morado-claro);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25);
+  background: var(--blanco);
+}
+
+form .btn {
+  margin-top: 6px;
+}
+
+/* ---------- Aviso (eliminar con productos asociados) ---------- */
+.aviso {
+  background: #fff7ed;
+  border-left: 4px solid var(--naranja);
+  color: #9a3412;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .contenedor {
+    padding: 22px 18px;
+  }
+
+  .encabezado h1 {
+    font-size: 21px;
+  }
+
+  .acciones {
+    flex-direction: column;
+  }
+}
