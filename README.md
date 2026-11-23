@@ -75,6 +75,16 @@ Luego abre `http://127.0.0.1:8000` en el navegador.
 
 Para usar el panel de administración, crea primero un usuario con `python manage.py createsuperuser`.
 
+## Pruebas
+
+El proyecto tiene **17 pruebas automatizadas** hechas con el framework de pruebas de Django. Revisan crear, editar y eliminar productos y categorías, la validación del precio, que la página de confirmación no borre nada y que al eliminar una categoría se borren solo sus productos.
+
+Para ejecutarlas:
+
+```
+python manage.py test
+```
+
 ## Qué aprendí
 
 - Dividir un proyecto Django en aplicaciones independientes.
@@ -82,10 +92,10 @@ Para usar el panel de administración, crea primero un usuario con `python manag
 - Usar `ModelForm` para crear y editar con el mismo formulario.
 - Subir imágenes con `ImageField` y servirlas en modo de desarrollo.
 - Optimizar la consulta del listado con `select_related`.
+- Escribir pruebas automatizadas con `TestCase` y el cliente de pruebas de Django.
 
 ## Mejoras pendientes
 
-- Agregar pruebas automatizadas (los archivos `tests.py` están vacíos).
 - Proteger la creación, edición y eliminación con inicio de sesión.
 - Validar que el precio no sea negativo.
 
