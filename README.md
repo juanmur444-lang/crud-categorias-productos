@@ -4,6 +4,20 @@ Aplicación web hecha con Django para administrar el catálogo de una tienda: pe
 
 Práctica académica del Tecnólogo en Análisis y Desarrollo de Software (ADSO), SENA.
 
+## Capturas
+
+**Listado de productos**
+
+![Listado de productos](docs/capturas/productos.png)
+
+**Listado de categorías**
+
+![Listado de categorías](docs/capturas/categorias.png)
+
+**Aviso al eliminar una categoría con productos (borrado en cascada)**
+
+![Aviso al eliminar una categoría con productos (borrado en cascada)](docs/capturas/eliminar-categoria.png)
+
 ## Funcionalidades
 
 - Listado de productos con su precio, imagen y categoría.
